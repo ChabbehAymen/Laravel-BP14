@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    @vite(['resources/js/app.js'])
+{{--    @vite(['resources/js/app.js'])--}}
 </head>
 <style>
     body{
@@ -61,8 +61,9 @@
         </div>
     </div>
 </nav>
-@csrf
+
 <form action="" method="post" class="d-flex  container mt-5 shadow-sm p-3 mb-5 bg-light gap-3 rounded">
+    @csrf
     <input class="form-control me-2 m-1 start-date" type="date" value='2024-03-03' min="2024-03-03" name="startDate" placeholder="From Date" aria-label="Search" id="fromDate">
     <p class="align-self-center m-0 w-50">End At</p>
     <input class="form-control me-2 m-1 end-date" type="date" name="endDate" placeholder="From Date" aria-label="Search" id="fromDate" disabled>
@@ -75,14 +76,13 @@
         <option value=Music>Music</option><option value=Theatre>Theatre</option><option value=Comedy>Comedy</option>    </select>
 
     <input class="btn btn-warning p-1 m-1" type="submit" value="filter" name="filter" onclick="this.form.submit()">
-    <select class="form-select form-select-sm m-1 active-select" aria-label="form-select-sm example" name="availability">
+    <select class="form-select form-select-sm m-1 active-select" aria-label="form-select-sm example">
         <option value="all" selected>All</option>
         <option value="open">Only Available</option>
         <option value="close">Guichet fermé</option>
     </select>
 
 </form>
-<?php var_dump($_POST);?>
 
 <section class="w-100 d-flex flex-wrap gap-4 ps-4 pe-4 mb-5" style="height: 100%">
     @foreach($data as $event)
