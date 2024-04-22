@@ -87,13 +87,13 @@
 <section class="w-100 d-flex flex-wrap gap-4 ps-4 pe-4 mb-5" style="height: 100%">
     @foreach($data as $event)
             <div class="card h-min" style="width: 18rem;">
-                <img src="https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg" img='{{$event->IMAGE}}' class="card-img-top" alt="..."/>
-                <p  class="badge text-bg-primary text-decoration-none m-1 align-self-start category-label">{{$event->CATEGORIE}}</p>
+                <img src="https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg" class="card-img-top" alt="..."/>
+                <p  class="badge text-bg-primary text-decoration-none m-1 align-self-start category-label">{{$event['category']}}</p>
                 <div class="card-body d-flex flex-column">
-                    <h5 class="card-title fw-bold">{{$event->TITRE}}</h5>
-                    <p class="card-text d-flex gap-2 align-items-center"><i class="fa-regular fa-clock"></i>{{$event->DATE}}</p>
-                    @if(!$event->DISPONIBLE == 0) <a href="event?id={{$event->ID_VERSION}}" class="btn btn-warning align-self-end buy-btn">J’achète</a>
-                    @else <a href="event?id={{$event->ID_VERSION}}" class="btn btn-dark align-self-end buy-btn">Guichet fermé</a>@endif
+                    <h5 class="card-title fw-bold">{{$event['title']}}</h5>
+                    <p class="card-text d-flex gap-2 align-items-center"><i class="fa-regular fa-clock"></i>{{$event['end_date']}}</p>
+                    @if(!$event->DISPONIBLE == 0) <a href="event?id={{$event['id']}}" class="btn btn-warning align-self-end buy-btn">J’achète</a>
+                    @else <a href="event?id={{$event['id']}}" class="btn btn-dark align-self-end buy-btn">Guichet fermé</a>@endif
                 </div>
             </div>
     @endforeach
