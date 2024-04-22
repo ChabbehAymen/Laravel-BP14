@@ -17,7 +17,7 @@ class VersionRepo
         // if (!empty($params['endDate'])) {
         //     $query->where('DATE', '<=', $params['endDate']);
         // }
-        return $this->model::select($query);
+        return $this->model::select($query)->with('events');
     }
     
 }

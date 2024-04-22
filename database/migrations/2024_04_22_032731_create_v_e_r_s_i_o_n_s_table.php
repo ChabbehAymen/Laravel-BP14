@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('v_e_r_s_i_o_n_s', function (Blueprint $table) {
             $table->id();
+            //TODO add Forigne key
             $table->timestamps();
         });
     }
