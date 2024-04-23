@@ -66,7 +66,7 @@
     @csrf
     <input class="form-control me-2 m-1 start-date" type="date" value='2024-03-03' min="2024-03-03" name="startDate" placeholder="From Date" aria-label="Search" id="fromDate">
     <p class="align-self-center m-0 w-50">End At</p>
-    <input class="form-control me-2 m-1 end-date" type="date" name="endDate" placeholder="From Date" aria-label="Search" id="fromDate" disabled>
+    <input class="form-control me-2 m-1 end-date" type="date" name="endDate" placeholder="From Date" aria-label="Search" id="fromDate" >
     <div>
 
     </div>
@@ -91,8 +91,8 @@
                 <p  class="badge text-bg-primary text-decoration-none m-1 align-self-start category-label">{{$event['category']}}</p>
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title fw-bold">{{$event['title']}}</h5>
-                    <p class="card-text d-flex gap-2 align-items-center"><i class="fa-regular fa-clock"></i>{{$event['end_date']}}</p>
-                    @if(!$event->DISPONIBLE == 0) <a href="event?id={{$event['id']}}" class="btn btn-warning align-self-end buy-btn">J’achète</a>
+                    <p class="card-text d-flex gap-2 align-items-center"><i class="fa-regular fa-clock"></i>{{$event['start_date']}}</p>
+                    @if(!$event['available'] == 0) <a href="event?id={{$event['id']}}" class="btn btn-warning align-self-end buy-btn">J’achète</a>
                     @else <a href="event?id={{$event['id']}}" class="btn btn-dark align-self-end buy-btn">Guichet fermé</a>@endif
                 </div>
             </div>

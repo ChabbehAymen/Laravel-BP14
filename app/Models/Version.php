@@ -18,4 +18,9 @@ class Version extends Model
     {
         return $this->has(Salle::class);
     }
+
+    public function factures()
+    {
+        return $this->belongsTo(Facture::class);
+    }
 }
